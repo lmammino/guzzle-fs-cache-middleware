@@ -18,6 +18,9 @@ class CacheItem {
         $this->responseBody = $response->getBody()->getContents();
     }
 
+    // since response are streams they can't be serialized
+    // this uses the static response body which represents the flushed stream
+    // and recontsructs a buffered stream from it
     public function getNormalizedResponse() {
         return $this->response->withBody(\GuzzleHttp\Psr7\stream_for($this->responseBody));
     }
