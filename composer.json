@@ -1,0 +1,8 @@
+{
+    "name": "lmammino/test-fs-cache-guzzle",
+    "type": "project",
+    "require": {
+        "guzzlehttp/guzzle": "^6.5",
+        "symfony/cache": "~3.4"
+    }
+}
